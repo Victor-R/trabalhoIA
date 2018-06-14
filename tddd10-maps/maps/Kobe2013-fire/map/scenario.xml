@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<scenario:scenario xmlns:scenario="urn:roborescue:map:scenario">
+  <scenario:firestation scenario:location="20337"/>
+  <scenario:fire scenario:location="10756"/>
+  <scenario:fire scenario:location="22670"/>
+  <scenario:fire scenario:location="32574"/>
+  <scenario:hydrant scenario:location="33567"/>
+  <scenario:hydrant scenario:location="35958"/>
+  <scenario:hydrant scenario:location="4677"/>
+  <scenario:hydrant scenario:location="32781"/>
+  <scenario:hydrant scenario:location="33989"/>
+  <scenario:hydrant scenario:location="2175"/>
+  <scenario:hydrant scenario:location="7017"/>
+  <scenario:hydrant scenario:location="8628"/>
+  <scenario:hydrant scenario:location="33723"/>
+  <scenario:hydrant scenario:location="33431"/>
+  <scenario:hydrant scenario:location="30890"/>
+  <scenario:hydrant scenario:location="5001"/>
+  <scenario:hydrant scenario:location="6882"/>
+  <scenario:hydrant scenario:location="35918"/>
+  <scenario:hydrant scenario:location="7746"/>
+  <scenario:hydrant scenario:location="6252"/>
+  <scenario:hydrant scenario:location="4245"/>
+  <scenario:firebrigade scenario:location="15045"/>
+  <scenario:firebrigade scenario:location="22713"/>
+</scenario:scenario>

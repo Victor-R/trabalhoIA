@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<scenario:scenario xmlns:scenario="urn:roborescue:map:scenario">
+  <scenario:refuge scenario:location="20337"/>
+  <scenario:refuge scenario:location="28953"/>
+  <scenario:policeforce scenario:location="31006"/>
+  <scenario:policeforce scenario:location="627"/>
+  <scenario:policeforce scenario:location="13057"/>
+  <scenario:policeforce scenario:location="3462"/>
+  <scenario:policeforce scenario:location="31042"/>
+  <scenario:policeforce scenario:location="8439"/>
+  <scenario:policeforce scenario:location="4119"/>
+  <scenario:policeforce scenario:location="20291"/>
+  <scenario:policeforce scenario:location="36009"/>
+  <scenario:policeforce scenario:location="1917"/>
+  <scenario:policeforce scenario:location="3759"/>
+  <scenario:policeforce scenario:location="4866"/>
+  <scenario:policeforce scenario:location="33048"/>
+  <scenario:policeforce scenario:location="11607"/>
+  <scenario:policeforce scenario:location="5568"/>
+  <scenario:policeforce scenario:location="2940"/>
+</scenario:scenario>

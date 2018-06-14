@@ -1,0 +1,10 @@
+manifest
+.idea
+out
+*.iml
+test-results
+/bin
+.classpath
+.project
+logs
+*~
