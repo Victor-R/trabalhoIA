@@ -55,7 +55,7 @@ public class SamplePoliceForce extends AbstractSampleAgent<PoliceForce> {
         if (target != null) {
             Logger.info("Clearing blockade " + target);
             sendSpeak(time, 1, ("Clearing " + target).getBytes());
-//            sendClear(time, target.getX(), target.getY());
+            sendClear(time, target.getX(), target.getY());
             List<Line2D> lines = GeometryTools2D.pointsToLines(GeometryTools2D.vertexArrayToPoints(target.getApexes()), true);
             double best = Double.MAX_VALUE;
             Point2D bestPoint = null;
