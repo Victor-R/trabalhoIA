@@ -1,29 +1,32 @@
-package sample_;
+package sample;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.EnumSet;
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
+import java.util.HashSet;
+import java.util.EnumSet;
 
-import rescuecore2.log.Logger;
+import rescuecore2.worldmodel.EntityID;
+import rescuecore2.worldmodel.ChangeSet;
 import rescuecore2.messages.Command;
+import rescuecore2.registry.Registry;
 import rescuecore2.registry.FilterEntityFactory;
 import rescuecore2.registry.FilterPropertyFactory;
-import rescuecore2.registry.Registry;
 import rescuecore2.standard.entities.Area;
-import rescuecore2.standard.entities.Civilian;
 import rescuecore2.standard.entities.Human;
 import rescuecore2.standard.entities.Road;
-import rescuecore2.standard.entities.StandardEntityFactory;
+import rescuecore2.standard.entities.StandardEntity;
 import rescuecore2.standard.entities.StandardEntityURN;
-import rescuecore2.standard.entities.StandardPropertyFactory;
 import rescuecore2.standard.entities.StandardPropertyURN;
-import rescuecore2.worldmodel.ChangeSet;
-import rescuecore2.worldmodel.EntityID;
-import sample.AbstractSampleAgent;
+import rescuecore2.standard.entities.StandardEntityFactory;
+import rescuecore2.standard.entities.StandardPropertyFactory;
+import rescuecore2.standard.entities.Civilian;
+import rescuecore2.log.Logger;
 
 /**
    A sample civilian agent.

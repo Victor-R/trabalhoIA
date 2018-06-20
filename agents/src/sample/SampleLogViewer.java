@@ -1,4 +1,4 @@
-package sample_;
+package sample;
 
 import static rescuecore2.misc.java.JavaTools.instantiate;
 

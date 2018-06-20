@@ -1,24 +1,24 @@
-package sample_;
+package sample;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.Set;
+import java.util.HashSet;
+import java.util.Collections;
+import java.util.Map;
 
+import rescuecore2.worldmodel.EntityID;
 import rescuecore2.Constants;
 import rescuecore2.log.Logger;
+
 import rescuecore2.standard.components.StandardAgent;
+import rescuecore2.standard.entities.StandardEntity;
 import rescuecore2.standard.entities.Building;
-import rescuecore2.standard.entities.Human;
 import rescuecore2.standard.entities.Refuge;
 import rescuecore2.standard.entities.Road;
-import rescuecore2.standard.entities.StandardEntity;
+import rescuecore2.standard.entities.Human;
 import rescuecore2.standard.kernel.comms.ChannelCommunicationModel;
 import rescuecore2.standard.kernel.comms.StandardCommunicationModel;
-import rescuecore2.worldmodel.EntityID;
-import sample.SampleSearch;
 
 /**
    Abstract base class for sample agents.

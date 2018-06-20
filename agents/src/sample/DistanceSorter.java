@@ -1,4 +1,4 @@
-package sample_;
+package sample;
 
 import java.util.Comparator;
 

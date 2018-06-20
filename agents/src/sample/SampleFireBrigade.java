@@ -1,24 +1,23 @@
-package sample_;
+package sample;
 
 import static rescuecore2.misc.Handy.objectsToIDs;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumSet;
-import java.util.List;
 
-import rescuecore2.log.Logger;
+import rescuecore2.worldmodel.EntityID;
+import rescuecore2.worldmodel.ChangeSet;
 import rescuecore2.messages.Command;
-import rescuecore2.standard.entities.Building;
-import rescuecore2.standard.entities.FireBrigade;
-import rescuecore2.standard.entities.Refuge;
+import rescuecore2.log.Logger;
+
 import rescuecore2.standard.entities.StandardEntity;
 import rescuecore2.standard.entities.StandardEntityURN;
-import rescuecore2.worldmodel.ChangeSet;
-import rescuecore2.worldmodel.EntityID;
-import sample.AbstractSampleAgent;
-import sample.DistanceSorter;
+import rescuecore2.standard.entities.Building;
+import rescuecore2.standard.entities.Refuge;
+import rescuecore2.standard.entities.FireBrigade;
 
 /**
    A sample fire brigade agent.
