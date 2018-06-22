@@ -93,7 +93,8 @@ public final class LaunchSampleAgents {
         try {
             while (pf-- != 0) {
                 Logger.info("Connecting police force " + (i++) + "...");
-                launcher.connect(new SamplePoliceForce());
+                //launcher.connect(new SamplePoliceForce());
+                launcher.connect(new PoliceForceAgent());
                 Logger.info("success");
             }
         }

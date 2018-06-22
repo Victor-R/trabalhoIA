@@ -25,7 +25,7 @@ import rescuecore2.standard.kernel.comms.StandardCommunicationModel;
    @param <E> The subclass of StandardEntity this agent wants to control.
  */
 public abstract class AbstractSampleAgent<E extends StandardEntity> extends StandardAgent<E> {
-    private static final int RANDOM_WALK_LENGTH = 50;
+    private static final int RANDOM_WALK_LENGTH = 100;
 
     private static final String SAY_COMMUNICATION_MODEL = StandardCommunicationModel.class.getName();
     private static final String SPEAK_COMMUNICATION_MODEL = ChannelCommunicationModel.class.getName();

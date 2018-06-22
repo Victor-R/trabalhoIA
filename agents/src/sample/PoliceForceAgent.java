@@ -38,7 +38,7 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 	private State state = State.AVAIABLE;
 	private EntityID goal;
 	private ArrayList<String> msgs = new ArrayList<String>();
-    
+	private int random;
 	public PoliceForceAgent() {
 		rnd = new Random(System.currentTimeMillis());
 	}
@@ -125,20 +125,33 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 
 	protected void act(int time) {
 		List <EntityID> path = new ArrayList<EntityID>();
+		
 		switch(state) {
 			case CLEAR:
-				if(currentBlockade == null)
+				if(currentBlockade == null) {
 					state = State.AVAIABLE;
-				else
+					random = 1;
+				}else {
 					sendClear(time, currentBlockade);
+					random = 0;
 					currentBlockade = null;
+				}
 				break;
+			case AVAIABLE:
+				sendMove(time,randomWalk());
+			break;
 			case WALK:
 				path = search.breadthFirstSearch(location().getID(), goal);
 				if(me.getPosition().getValue() == goal.getValue())
 					state = State.AVAIABLE;
 				else
-					sendMove(time, path);
+					if(random==1) {
+						sendMove(time,randomWalk());
+						System.out.println("RANDOM");
+					}else {
+						sendMove(time, path);
+						System.out.println("PATH");
+					}					
 				break;
 		}
 	}
