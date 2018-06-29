@@ -83,7 +83,7 @@ public final class LaunchSampleAgents {
         try {
             while (fb-- != 0) {
                 Logger.info("Connecting fire brigade " + (i++) + "...");
-                launcher.connect(new SampleFireBrigade());
+                launcher.connect(new FireBrigadeForce());
                 Logger.info("success");
             }
         }
@@ -104,7 +104,7 @@ public final class LaunchSampleAgents {
         try {
             while (at-- != 0) {
                 Logger.info("Connecting ambulance team " + (i++) + "...");
-                launcher.connect(new SampleAmbulanceTeam());
+                launcher.connect(new AmbulanceTeamForce());
                 Logger.info("success");
             }
         }

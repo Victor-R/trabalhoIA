@@ -22,7 +22,7 @@ import rescuecore2.standard.entities.Refuge;
 /**
    A sample ambulance team agent.
  */
-public class SampleAmbulanceTeam extends AbstractSampleAgent<AmbulanceTeam> {
+public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
     private Collection<EntityID> unexploredBuildings;
 
     @Override
@@ -33,6 +33,7 @@ public class SampleAmbulanceTeam extends AbstractSampleAgent<AmbulanceTeam> {
     @Override
     protected void postConnect() {
         super.postConnect();
+        System.out.println("Ambulance Team Conectado com sucesso");
         model.indexClass(StandardEntityURN.CIVILIAN, StandardEntityURN.FIRE_BRIGADE, StandardEntityURN.POLICE_FORCE, StandardEntityURN.AMBULANCE_TEAM, StandardEntityURN.REFUGE,StandardEntityURN.HYDRANT,StandardEntityURN.GAS_STATION, StandardEntityURN.BUILDING);
         unexploredBuildings = new HashSet<EntityID>(buildingIDs);
     }

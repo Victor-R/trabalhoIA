@@ -22,7 +22,7 @@ import rescuecore2.standard.entities.FireBrigade;
 /**
    A sample fire brigade agent.
  */
-public class SampleFireBrigade extends AbstractSampleAgent<FireBrigade> {
+public class FireBrigadeForce extends AbstractSampleAgent<FireBrigade> {
     private static final String MAX_WATER_KEY = "fire.tank.maximum";
     private static final String MAX_DISTANCE_KEY = "fire.extinguish.max-distance";
     private static final String MAX_POWER_KEY = "fire.extinguish.max-sum";
@@ -39,6 +39,7 @@ public class SampleFireBrigade extends AbstractSampleAgent<FireBrigade> {
     @Override
     protected void postConnect() {
         super.postConnect();
+        System.out.println("Fire brigade Conectado com sucesso");
         model.indexClass(StandardEntityURN.BUILDING, StandardEntityURN.REFUGE,StandardEntityURN.HYDRANT,StandardEntityURN.GAS_STATION);
         maxWater = config.getIntValue(MAX_WATER_KEY);
         maxDistance = config.getIntValue(MAX_DISTANCE_KEY);

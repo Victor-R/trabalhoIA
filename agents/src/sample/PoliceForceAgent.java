@@ -138,7 +138,8 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 				}
 				break;
 			case AVAIABLE:
-				state = State.WALK;
+				sendMove(time,randomWalk());
+				System.out.println("RANDOM");
 			break;
 			case WALK:
 				path = search.breadthFirstSearch(location().getID(), goal);
@@ -151,8 +152,7 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 					}else {
 						sendMove(time, path);
 						System.out.println("PATH");
-					}	
-					
+					}						
 				}									
 				break;
 		}

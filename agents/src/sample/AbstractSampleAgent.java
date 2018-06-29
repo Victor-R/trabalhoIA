@@ -26,7 +26,6 @@ import rescuecore2.standard.kernel.comms.StandardCommunicationModel;
  */
 public abstract class AbstractSampleAgent<E extends StandardEntity> extends StandardAgent<E> {
     private static final int RANDOM_WALK_LENGTH = 50;
-    private static List<EntityID> past = null;
     private static final String SAY_COMMUNICATION_MODEL = StandardCommunicationModel.class.getName();
     private static final String SPEAK_COMMUNICATION_MODEL = ChannelCommunicationModel.class.getName();
 

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.6.18)  19 JUN 2018 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.6.21)  29 JUN 2018 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **trabalhoIA.tex
 (./trabalhoIA.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 9 language(s) loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -897,6 +897,17 @@ File: fig2.png Graphic file (type png)
 Package pdftex.def Info: fig2.png  used on input line 115.
 (pdftex.def)             Requested size: 182.68205pt x 146.04526pt.
  [2 <./fig2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+[]\T1/ptm/m/n/10 Esse agente age me-di-ante a 3 es-ta-dos: \T1/ptm/m/it/10 AVAI
+L-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+\T1/ptm/m/it/10 ABLE\T1/ptm/m/n/10 (Disponível), \T1/ptm/m/it/10 WALK\T1/ptm/m/
+n/10 (Andando) e \T1/ptm/m/it/10 CLEAR\T1/ptm/m/n/10 (Limpar).
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -916,19 +927,19 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4989 strings out of 494847
- 68382 string characters out of 6179080
- 128367 words of memory out of 5000000
- 8227 multiletter control sequences out of 15000+600000
+ 4989 strings out of 494805
+ 68382 string characters out of 6178000
+ 129517 words of memory out of 5000000
+ 8234 multiletter control sequences out of 15000+600000
  105438 words of font info for 110 fonts, out of 8000000 for 9000
- 59 hyphenation exceptions out of 8191
- 41i,8n,35p,411b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81 hyphenation exceptions out of 8191
+ 41i,8n,35p,566b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on trabalhoIA.pdf (3 pages, 388329 bytes).
+Output written on trabalhoIA.pdf (3 pages, 390984 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

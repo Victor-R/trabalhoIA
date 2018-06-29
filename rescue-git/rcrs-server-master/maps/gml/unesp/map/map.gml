@@ -10497,7 +10497,7 @@
   </rcr:edgelist>
   <rcr:buildinglist>
     <rcr:building gml:id="8">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#4"/>
         <gml:directedEdge orientation="+" xlink:href="#5"/>
         <gml:directedEdge orientation="+" xlink:href="#1023"/>
@@ -10507,7 +10507,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="17">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#834"/>
         <gml:directedEdge orientation="+" xlink:href="#835" rcr:neighbour="2368"/>
         <gml:directedEdge orientation="+" xlink:href="#832"/>
@@ -10521,7 +10521,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="28">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#23"/>
         <gml:directedEdge orientation="+" xlink:href="#870"/>
         <gml:directedEdge orientation="+" xlink:href="#871" rcr:neighbour="2374"/>
@@ -10534,7 +10534,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="37">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#33"/>
         <gml:directedEdge orientation="+" xlink:href="#789"/>
         <gml:directedEdge orientation="+" xlink:href="#792" rcr:neighbour="2212"/>
@@ -10544,7 +10544,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="46">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#42"/>
         <gml:directedEdge orientation="+" xlink:href="#43"/>
         <gml:directedEdge orientation="+" xlink:href="#1053"/>
@@ -10556,7 +10556,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="55">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#51"/>
         <gml:directedEdge orientation="+" xlink:href="#52"/>
         <gml:directedEdge orientation="+" xlink:href="#1119"/>
@@ -10566,7 +10566,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="82">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#69"/>
         <gml:directedEdge orientation="+" xlink:href="#70"/>
         <gml:directedEdge orientation="+" xlink:href="#71"/>
@@ -10587,7 +10587,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="91">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#87"/>
         <gml:directedEdge orientation="+" xlink:href="#864"/>
         <gml:directedEdge orientation="+" xlink:href="#865" rcr:neighbour="2221"/>
@@ -10601,7 +10601,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="100">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#96"/>
         <gml:directedEdge orientation="+" xlink:href="#948"/>
         <gml:directedEdge orientation="+" xlink:href="#949" rcr:neighbour="2261"/>
@@ -10611,7 +10611,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="117">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#109"/>
         <gml:directedEdge orientation="+" xlink:href="#110"/>
         <gml:directedEdge orientation="+" xlink:href="#111"/>
@@ -10627,7 +10627,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="126">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#122"/>
         <gml:directedEdge orientation="+" xlink:href="#123"/>
         <gml:directedEdge orientation="+" xlink:href="#888"/>
@@ -10637,7 +10637,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="167">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#147"/>
         <gml:directedEdge orientation="+" xlink:href="#148"/>
         <gml:directedEdge orientation="+" xlink:href="#149"/>
@@ -10663,7 +10663,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="176">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#172"/>
         <gml:directedEdge orientation="+" xlink:href="#798"/>
         <gml:directedEdge orientation="+" xlink:href="#799" rcr:neighbour="2362"/>
@@ -10673,7 +10673,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="185">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#181"/>
         <gml:directedEdge orientation="+" xlink:href="#182"/>
         <gml:directedEdge orientation="+" xlink:href="#183"/>
@@ -10683,7 +10683,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="194">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#190"/>
         <gml:directedEdge orientation="+" xlink:href="#191"/>
         <gml:directedEdge orientation="+" xlink:href="#192"/>
@@ -10693,7 +10693,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="203">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#199"/>
         <gml:directedEdge orientation="+" xlink:href="#200"/>
         <gml:directedEdge orientation="+" xlink:href="#201"/>
@@ -10703,7 +10703,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="212">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1017"/>
         <gml:directedEdge orientation="+" xlink:href="#1020" rcr:neighbour="2427"/>
         <gml:directedEdge orientation="+" xlink:href="#1021"/>
@@ -10715,7 +10715,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="221">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#217"/>
         <gml:directedEdge orientation="+" xlink:href="#218"/>
         <gml:directedEdge orientation="+" xlink:href="#219"/>
@@ -10725,7 +10725,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="230">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#226"/>
         <gml:directedEdge orientation="+" xlink:href="#227"/>
         <gml:directedEdge orientation="+" xlink:href="#228"/>
@@ -10735,7 +10735,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="239">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#912"/>
         <gml:directedEdge orientation="+" xlink:href="#913" rcr:neighbour="2386"/>
         <gml:directedEdge orientation="+" xlink:href="#910"/>
@@ -10745,7 +10745,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="264">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#252"/>
         <gml:directedEdge orientation="+" xlink:href="#253"/>
         <gml:directedEdge orientation="+" xlink:href="#254"/>
@@ -10763,7 +10763,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="275">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#816"/>
         <gml:directedEdge orientation="+" xlink:href="#817" rcr:neighbour="2365"/>
         <gml:directedEdge orientation="+" xlink:href="#813" rcr:neighbour="2365"/>
@@ -10780,7 +10780,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="284">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#280"/>
         <gml:directedEdge orientation="+" xlink:href="#281"/>
         <gml:directedEdge orientation="+" xlink:href="#282"/>
@@ -10790,7 +10790,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="295">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#879" rcr:neighbour="2374"/>
         <gml:directedEdge orientation="+" xlink:href="#880"/>
         <gml:directedEdge orientation="+" xlink:href="#291"/>
@@ -10801,7 +10801,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="304">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#975"/>
         <gml:directedEdge orientation="+" xlink:href="#978" rcr:neighbour="2302"/>
         <gml:directedEdge orientation="+" xlink:href="#979"/>
@@ -10811,7 +10811,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="313">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#309"/>
         <gml:directedEdge orientation="+" xlink:href="#1032"/>
         <gml:directedEdge orientation="+" xlink:href="#1033" rcr:neighbour="2314"/>
@@ -10821,7 +10821,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="322">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1080"/>
         <gml:directedEdge orientation="+" xlink:href="#1081" rcr:neighbour="2323"/>
         <gml:directedEdge orientation="+" xlink:href="#1078"/>
@@ -10831,7 +10831,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="331">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#327"/>
         <gml:directedEdge orientation="+" xlink:href="#328"/>
         <gml:directedEdge orientation="+" xlink:href="#329"/>
@@ -10841,7 +10841,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="356">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1140"/>
         <gml:directedEdge orientation="+" xlink:href="#1141" rcr:neighbour="2335"/>
         <gml:directedEdge orientation="+" xlink:href="#1138"/>
@@ -10859,7 +10859,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="377">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#367"/>
         <gml:directedEdge orientation="+" xlink:href="#368"/>
         <gml:directedEdge orientation="+" xlink:href="#369"/>
@@ -10875,7 +10875,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="394">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#386" rcr:neighbour="2436"/>
         <gml:directedEdge orientation="+" xlink:href="#387" rcr:neighbour="2436"/>
         <gml:directedEdge orientation="+" xlink:href="#1089" rcr:neighbour="2436"/>
@@ -10889,7 +10889,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="403">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#399"/>
         <gml:directedEdge orientation="+" xlink:href="#1098"/>
         <gml:directedEdge orientation="+" xlink:href="#1099" rcr:neighbour="2326"/>
@@ -10899,7 +10899,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="428">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#416"/>
         <gml:directedEdge orientation="+" xlink:href="#417"/>
         <gml:directedEdge orientation="+" xlink:href="#418"/>
@@ -10919,7 +10919,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="437">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#837"/>
         <gml:directedEdge orientation="+" xlink:href="#840" rcr:neighbour="2218"/>
         <gml:directedEdge orientation="+" xlink:href="#841"/>
@@ -10931,7 +10931,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="466">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#452"/>
         <gml:directedEdge orientation="+" xlink:href="#453"/>
         <gml:directedEdge orientation="+" xlink:href="#454"/>
@@ -10951,7 +10951,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="475">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#471"/>
         <gml:directedEdge orientation="+" xlink:href="#1248"/>
         <gml:directedEdge orientation="+" xlink:href="#1249" rcr:neighbour="2200"/>
@@ -10961,7 +10961,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="500">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#488"/>
         <gml:directedEdge orientation="+" xlink:href="#489"/>
         <gml:directedEdge orientation="+" xlink:href="#490"/>
@@ -10979,7 +10979,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="513">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#507"/>
         <gml:directedEdge orientation="+" xlink:href="#508"/>
         <gml:directedEdge orientation="+" xlink:href="#509"/>
@@ -10991,7 +10991,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="522">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1068"/>
         <gml:directedEdge orientation="+" xlink:href="#1069" rcr:neighbour="2433"/>
         <gml:directedEdge orientation="+" xlink:href="#1066"/>
@@ -11001,7 +11001,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="531">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1242"/>
         <gml:directedEdge orientation="+" xlink:href="#1243" rcr:neighbour="2197"/>
         <gml:directedEdge orientation="+" xlink:href="#1240"/>
@@ -11011,7 +11011,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="540">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#536"/>
         <gml:directedEdge orientation="+" xlink:href="#1008"/>
         <gml:directedEdge orientation="+" xlink:href="#1009" rcr:neighbour="2329"/>
@@ -11021,7 +11021,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="549">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1014"/>
         <gml:directedEdge orientation="+" xlink:href="#1015" rcr:neighbour="2424"/>
         <gml:directedEdge orientation="+" xlink:href="#1012"/>
@@ -11031,7 +11031,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="568">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1110"/>
         <gml:directedEdge orientation="+" xlink:href="#1111" rcr:neighbour="1803"/>
         <gml:directedEdge orientation="+" xlink:href="#1107" rcr:neighbour="1803"/>
@@ -11048,7 +11048,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="577">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1059"/>
         <gml:directedEdge orientation="+" xlink:href="#1062" rcr:neighbour="2320"/>
         <gml:directedEdge orientation="+" xlink:href="#1063"/>
@@ -11058,7 +11058,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="586">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#582"/>
         <gml:directedEdge orientation="+" xlink:href="#1050"/>
         <gml:directedEdge orientation="+" xlink:href="#1051" rcr:neighbour="2317"/>
@@ -11068,7 +11068,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="597">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#966"/>
         <gml:directedEdge orientation="+" xlink:href="#967" rcr:neighbour="2299"/>
         <gml:directedEdge orientation="+" xlink:href="#964"/>
@@ -11079,7 +11079,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="608">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1164" rcr:neighbour="2341"/>
         <gml:directedEdge orientation="+" xlink:href="#1165"/>
         <gml:directedEdge orientation="+" xlink:href="#604"/>
@@ -11090,7 +11090,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="649">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#629"/>
         <gml:directedEdge orientation="+" xlink:href="#630"/>
         <gml:directedEdge orientation="+" xlink:href="#631"/>
@@ -11116,7 +11116,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="660">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1083" rcr:neighbour="2353"/>
         <gml:directedEdge orientation="+" xlink:href="#1084"/>
         <gml:directedEdge orientation="+" xlink:href="#656"/>
@@ -11127,7 +11127,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="685">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#673" rcr:neighbour="1800"/>
         <gml:directedEdge orientation="+" xlink:href="#674" rcr:neighbour="1800"/>
         <gml:directedEdge orientation="+" xlink:href="#1101" rcr:neighbour="1800"/>
@@ -11145,7 +11145,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="694">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#690"/>
         <gml:directedEdge orientation="+" xlink:href="#691"/>
         <gml:directedEdge orientation="+" xlink:href="#692"/>
@@ -11155,7 +11155,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="703">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#699"/>
         <gml:directedEdge orientation="+" xlink:href="#1167"/>
         <gml:directedEdge orientation="+" xlink:href="#1170" rcr:neighbour="2341"/>
@@ -11167,7 +11167,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="712">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1176"/>
         <gml:directedEdge orientation="+" xlink:href="#1177" rcr:neighbour="1955"/>
         <gml:directedEdge orientation="+" xlink:href="#1174"/>
@@ -11177,7 +11177,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="721">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1035"/>
         <gml:directedEdge orientation="+" xlink:href="#1038" rcr:neighbour="2430"/>
         <gml:directedEdge orientation="+" xlink:href="#1039"/>
@@ -11189,7 +11189,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="730">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#1182"/>
         <gml:directedEdge orientation="+" xlink:href="#1183" rcr:neighbour="2344"/>
         <gml:directedEdge orientation="+" xlink:href="#1180"/>
@@ -11201,7 +11201,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="761">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#746"/>
         <gml:directedEdge orientation="+" xlink:href="#747"/>
         <gml:directedEdge orientation="+" xlink:href="#748"/>
@@ -11224,7 +11224,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="770">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#852"/>
         <gml:directedEdge orientation="+" xlink:href="#853" rcr:neighbour="2371"/>
         <gml:directedEdge orientation="+" xlink:href="#850"/>
@@ -11236,7 +11236,7 @@
       </gml:Face>
     </rcr:building>
     <rcr:building gml:id="787">
-      <gml:Face rcr:floors="2" rcr:buildingcode="0" rcr:importance="1">
+      <gml:Face rcr:floors="1" rcr:buildingcode="0" rcr:importance="1">
         <gml:directedEdge orientation="+" xlink:href="#779"/>
         <gml:directedEdge orientation="+" xlink:href="#780"/>
         <gml:directedEdge orientation="+" xlink:href="#781"/>

@@ -129,6 +129,21 @@ Existem dois tipo de comunicação no simulador:
 
 Ambos os tipos de comunicação estão suscetíveis a falhas, mas no caso do radio communication, há duas falhas possíveis, em ambos os casos há a possibilidade de \textit{dropout} que é a a falha de um agente em receber a mensagem. E a outra falha possível seria a de \textit{failure}, que ocorre no caso do radio apenas, onde um agente recebe a mensagem mas ela vem vazia.
 
+\section{Programação de Agentes}
+A programação de agentes envolve a utilização de conceitos que imitam a atuação humana em situações de desastre. Por exemplo, ouvir algum civil pedindo por socorro, envolve passar informações valiosas para agir no ambiente para outros agentes. E principalmente agir em prol do objetivo, que é o resgate de civis.
+Lembrando que os agentes só podem realizar uma ação por 'turno', seja essa andar, resgatar, etc. Já a comunicação é permitida que seja uma ação adicional, portanto pode se mover e se comunicar em um 'turno', por exemplo.
+\subsection{Civis}
+Os civis tem o código provido pelo próprio simulador, eles traçam um caminho para o refúgio, se esse caminho tiver obstruído ele espera por socorro. Ele também chama por socorro para agentes a sua volta receberem a sua posição.
+\subsection{Police Force}
+Esse agente age mediante a 3 estados: \textit{AVAILABLE}(Disponível), \textit{WALK}(Andando) e \textit{CLEAR}(Limpar). A principal função de um policial é limpar as vias do ambiente, portanto foi priorizado o agente estar se movendo sempre que disponível, com o objetivo de encontrar mais blockades para limpar.
+
+Na ação \textit{WALK}, o agente anda de 2 formas, uma seria randomicamente, através de uma função que procura caminhos possíveis e sorteia um para o agente andar, assim encontrando possíveis blockades. A outra forma de andar seria direcionada a um objetivo, que no caso do policial seria um blockade, dessa maneira quando é encontrado um bloqueio, e o agente entra em estado \textit{CLEAR}, o mesmo vai andar em direção ao bloqueio buscando eliminá-lo.
+
+A ação \textit{CLEAR}, que é a principal função do policial, consiste em no momento que for detectado um blockade, o mesmo deve ser limpo com a função sendClear(), que com o envio das informações do blockade, realiza a limpeza do bloqueio. A complexidade dos bloqueios é algo definido pelo o simulador 'collapse', portanto o sendClear(), que utiliza o simulador 'clear', devido a complexidade do bloqueio a limpeza, não é instantânea, pode necessitar de várias chamadas da função sendClear() para eliminar um blockade.
+\subsection{Ambulance Team}
+
+\subsection{Fire brigade}
+
 \begin{thebibliography}{00}
 \bibitem{b1} Annibal B. M. da Silva, Luis G. Nardin and Jaime S. Sichman, ``Robocup Rescue Simulator Tutorial,'' Laboratório de Técnicas Inteligentes - Escola Politécnica da USP, São Paulo - SP.
 \bibitem{b2} Alan D. Barroso, Felipe Santana e Victor Lassance, "Tutorial for the Creation of a Robocup Rescue Simulator Map", Escola Politécnica da USP, São Paulo - SP.
