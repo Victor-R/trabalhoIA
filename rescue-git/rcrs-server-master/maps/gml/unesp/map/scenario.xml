@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <rcr:scenario xmlns:rcr="urn:roborescue:map:scenario">
-  <rcr:refuge rcr:location="8"/>
+<!-- Buildings -->
+  <rcr:refuge rcr:location="531"/>
+  <rcr:firestation rcr:location="176"/>
+  <rcr:ambulancecentre rcr:location="185"/>
+<!-- Civilians -->
   <rcr:civilian rcr:location="17"/>
   <rcr:civilian rcr:location="28"/>
   <rcr:civilian rcr:location="37"/>
   <rcr:civilian rcr:location="46"/>
   <rcr:civilian rcr:location="55"/>
   <rcr:civilian rcr:location="82"/>
-  <rcr:aftershock rcr:time="10" rcr:intensity="0.5"/>
-  
-
   <rcr:civilian rcr:location="91"/>
   <rcr:civilian rcr:location="100"/>
   <rcr:civilian rcr:location="117"/>
   <rcr:civilian rcr:location="126"/>
-  <rcr:civilian rcr:location="167"/>
+  <rcr:civilian rcr:location="1272"/>
+<!--Rescue Team-->
   <rcr:firebrigade rcr:location="1294"/>
-  <rcr:policeforce rcr:location="1272"/>
+  <rcr:firebrigade rcr:location="8"/>
+  <rcr:firebrigade rcr:location="176"/>
+  <rcr:firebrigade rcr:location="176"/>
+  <rcr:firebrigade rcr:location="176"/>
+  <rcr:firebrigade rcr:location="176"/>
   <rcr:ambulanceteam rcr:location="1334"/>
-<!--
+  <rcr:ambulanceteam rcr:location="185"/>
+  <rcr:ambulanceteam rcr:location="185"/>
+  <rcr:ambulanceteam rcr:location="185"/>
+  <rcr:ambulanceteam rcr:location="185"/>
+  <rcr:ambulanceteam rcr:location="185"/>
   <rcr:policeforce rcr:location="1283"/>
+  <rcr:policeforce rcr:location="185"/>
+  <rcr:policeforce rcr:location="176"/>
+  <rcr:policeforce rcr:location="685"/>
+  <rcr:policeforce rcr:location="1272"/>
+  <rcr:policeforce rcr:location="2024"/>
+  <rcr:policeforce rcr:location="466"/>
+
+<!--
+<rcr:civilian rcr:location="167"/>
+<rcr:policeforce rcr:location="450"/>
   <rcr:firebrigade rcr:location="1303"/>
 
   <rcr:policeforce rcr:location="1316"/>
   <rcr:firebrigade rcr:location="1327"/>
 -->
-  <rcr:firestation rcr:location="176"/>
-  <rcr:ambulancecentre rcr:location="185"/>
 
+  <rcr:aftershock rcr:time="10" rcr:intensity="0.5"/>
   <rcr:fire rcr:location="8"/>
 </rcr:scenario>

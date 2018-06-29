@@ -138,20 +138,22 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 				}
 				break;
 			case AVAIABLE:
-				sendMove(time,randomWalk());
+				state = State.WALK;
 			break;
 			case WALK:
 				path = search.breadthFirstSearch(location().getID(), goal);
 				if(me.getPosition().getValue() == goal.getValue())
 					state = State.AVAIABLE;
-				else
+				else {
 					if(random==1) {
 						sendMove(time,randomWalk());
 						System.out.println("RANDOM");
 					}else {
 						sendMove(time, path);
 						System.out.println("PATH");
-					}					
+					}	
+					
+				}									
 				break;
 		}
 	}

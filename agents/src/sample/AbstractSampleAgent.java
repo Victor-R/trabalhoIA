@@ -25,8 +25,8 @@ import rescuecore2.standard.kernel.comms.StandardCommunicationModel;
    @param <E> The subclass of StandardEntity this agent wants to control.
  */
 public abstract class AbstractSampleAgent<E extends StandardEntity> extends StandardAgent<E> {
-    private static final int RANDOM_WALK_LENGTH = 100;
-
+    private static final int RANDOM_WALK_LENGTH = 50;
+    private static List<EntityID> past = null;
     private static final String SAY_COMMUNICATION_MODEL = StandardCommunicationModel.class.getName();
     private static final String SPEAK_COMMUNICATION_MODEL = ChannelCommunicationModel.class.getName();
 
@@ -92,9 +92,10 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
        @return A random walk.
     */
     protected List<EntityID> randomWalk() {
-        List<EntityID> result = new ArrayList<EntityID>(RANDOM_WALK_LENGTH);
+        List<EntityID> result = new ArrayList<EntityID>(RANDOM_WALK_LENGTH);        
         Set<EntityID> seen = new HashSet<EntityID>();
         EntityID current = ((Human)me()).getPosition();
+        
         for (int i = 0; i < RANDOM_WALK_LENGTH; ++i) {
             result.add(current);
             seen.add(current);
@@ -113,7 +114,8 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
                 // We reached a dead-end.
                 break;
             }
-        }
+        }        
         return result;
+        
     }
 }
