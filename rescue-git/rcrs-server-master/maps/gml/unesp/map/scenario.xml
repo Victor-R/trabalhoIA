@@ -2,7 +2,7 @@
 
 <rcr:scenario xmlns:rcr="urn:roborescue:map:scenario">
 <!-- Buildings -->
-  <rcr:refuge rcr:location="531"/>
+  <rcr:refuge rcr:location="126"/>
   <rcr:firestation rcr:location="176"/>
   <rcr:ambulancecentre rcr:location="185"/>
 <!-- Civilians -->
@@ -15,28 +15,28 @@
   <rcr:civilian rcr:location="91"/>
   <rcr:civilian rcr:location="100"/>
   <rcr:civilian rcr:location="117"/>
-  <rcr:civilian rcr:location="126"/>
+  <rcr:civilian rcr:location="531"/>
   <rcr:civilian rcr:location="1272"/>
 <!--Rescue Team-->
   <rcr:firebrigade rcr:location="1294"/>
   <rcr:firebrigade rcr:location="8"/>
-  <rcr:firebrigade rcr:location="176"/>
-  <rcr:firebrigade rcr:location="176"/>
-  <rcr:firebrigade rcr:location="176"/>
-  <rcr:firebrigade rcr:location="176"/>
+  <rcr:firebrigade rcr:location="2356"/>
+  <rcr:firebrigade rcr:location="2356"/>
+  <rcr:firebrigade rcr:location="2356"/>
+  <rcr:firebrigade rcr:location="2356"/>
   <rcr:ambulanceteam rcr:location="1334"/>
-  <rcr:ambulanceteam rcr:location="185"/>
-  <rcr:ambulanceteam rcr:location="185"/>
-  <rcr:ambulanceteam rcr:location="185"/>
-  <rcr:ambulanceteam rcr:location="185"/>
-  <rcr:ambulanceteam rcr:location="185"/>
+  <rcr:ambulanceteam rcr:location="1539"/>
+  <rcr:ambulanceteam rcr:location="1539"/>
+  <rcr:ambulanceteam rcr:location="1539"/>
+  <rcr:ambulanceteam rcr:location="1539"/>
+  <rcr:ambulanceteam rcr:location="1539"/>
   <rcr:policeforce rcr:location="1283"/>
   <rcr:policeforce rcr:location="1334"/>
-  <rcr:policeforce rcr:location="176"/>
-  <rcr:policeforce rcr:location="685"/>
+  <rcr:policeforce rcr:location="2362"/>
+  <rcr:policeforce rcr:location="1800"/>
   <rcr:policeforce rcr:location="1272"/>
   <rcr:policeforce rcr:location="2024"/>
-  <rcr:policeforce rcr:location="466"/>
+  <rcr:policeforce rcr:location="2194"/>
 
 <!--
 <rcr:civilian rcr:location="167"/>

@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.HashSet;
 
+
 import rescuecore2.worldmodel.EntityID;
 import rescuecore2.worldmodel.ChangeSet;
 import rescuecore2.messages.Command;
@@ -34,7 +35,6 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
     private Collection<EntityID> unexploredBuildings;
     private State state = State.AVAIABLE;
     private AmbulanceTeam me;
-
     @Override
     public String toString() {
         return "Agente Médico";
@@ -51,14 +51,17 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
 
     @Override
     protected void think(int time, ChangeSet changed, Collection<Command> heard) {
+    	
         if (time == config.getIntValue(kernel.KernelConstants.IGNORE_AGENT_COMMANDS_KEY)) {
             // Subscribe to channel 1
             sendSubscribe(time, 1);
         }
         for (Command next : heard) {
-            Logger.debug("Heard " + next);
+            Logger.debug("Heard " + next);            
         }
-        updateUnexploredBuildings(changed);
+        updateUnexploredBuildings(changed); 
+        System.out.println(me.getID()+" Moving to "+ me.getDirectionProperty().getValue());
+        
         // Verifica se está levando algum civil para o refúgio
         if (someoneOnBoard()) {
             // Verifica se está no refúgio
@@ -85,51 +88,76 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
             }
         }
         // Procura entre os civis mais próximos para ver se consegue ajudar
-        for (Human next : getTargets()) {
+        for (Human next : getTargets()) {        	
             if (next.getPosition().equals(location().getID())) {
                 // Verifica se o civil está no mesmo local e se precisa de ajuda
-                if ((next instanceof Civilian) && next.getBuriedness() == 0 && !(location() instanceof Refuge)) {
-                    // Carrega civil
-                    Logger.info("Carregando civil " + next);
-                    sendLoad(time, next.getID());
-                    state = State.LOAD;
-                    System.out.println("Estado atual do " + me.toString() + " " + state);
-                    return;
-                }
-                if (next.getBuriedness() > 0) {
-                    // Resgatando Civil
-                    Logger.info("Resgatando civil " + next);
-                    sendRescue(time, next.getID());
-                    state = State.RESCUE;
-                    System.out.println("Estado atual do " + me.toString() + " " + state);
-                    return;
-                }
-            }
-            else {
-                // Tenta se mover até o civil
-                List<EntityID> path = search.breadthFirstSearch(me().getPosition(), next.getPosition());
-                if (path != null) {
-                    Logger.info("Movendo até o civil");
-                    sendMove(time, path);
-                    state = State.WALK;
-                    System.out.println("Estado atual do " + me.toString() + " " + state);
-                    return;
-                }
+            	
+            		// se alguém está cuidando siga em frente            		
+            	if(listahospital.isOwner(me.getID().getValue(),next.getID().getValue())) {
+            		if ((next instanceof Civilian) && next.getBuriedness() == 0 && !(location() instanceof Refuge)) {
+                        // Carrega civil
+                        Logger.info("Carregando civil " + next);
+                        sendLoad(time, next.getID());
+                        state = State.LOAD;
+                        System.out.println("Estado atual do " + me.toString() + " " + state);
+                        return;
+                    }
+                    
+                    if (next.getBuriedness() > 0) {
+                        // Resgatando Civil
+                        Logger.info("Resgatando civil " + next);
+                        sendRescue(time, next.getID());
+                        state = State.RESCUE;
+                        System.out.println("Estado atual do " + me.toString() + " " + state);
+                        return;
+                    }
+            	}
+                
+            }else {
+            	
+            	if(listahospital.isOwner(me.getID().getValue(),next.getID().getValue())) {
+            		// Tenta se mover até o civil
+            		System.out.println("Ambulancia "+me.getID().getValue()+" indo para "+ next.getID().getValue());
+                    List<EntityID> path = search.breadthFirstSearch(me().getPosition(), next.getPosition());
+                    state = State.AVAIABLE;
+                    
+                    if (path != null) {                
+                        Logger.info("Movendo até o civil");                    
+                        sendMove(time, path);
+                        state = State.WALK;
+                        System.out.println("Estado atual do " + me.toString() + " " + state);
+                        return;
+                    }
+            	}else {
+            		if(!listahospital.someoneHasCivilian(next.getID().getValue())) {
+            			// o civil tem ambulancia já
+            			listahospital.addRescue(me.getID().getValue(), next.getID().getValue());
+            			listahospital.cont++;            			            			            			
+            		}else {            			
+            			// civil com dono portanto, continuar andando
+            			//System.out.println("AMBULANCIA RANDOM");
+            			//sendMove(time,randomWalk());
+            		}
+            	}
+                
             }
         }
         // Nenhum civil próximo
         List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings);
-        if (path != null) {
-            Logger.info("Procurando prédios");
+        
+        if (path != null && (path != lastpath || lastpath.isEmpty() == true)) {
+            Logger.info("Procurando prédios");            
             sendMove(time, path);
             state = State.WALK;
             System.out.println("Estado atual do " + me.toString() + " " + state);
+            lastpath = path;
             return;
         }
         Logger.info("Movendo aleatóriamente");
         sendMove(time, randomWalk());
         state = State.AVAIABLE;
         System.out.println("Estado atual do " + me.toString() + " " + state);
+        
     }
 
     @Override

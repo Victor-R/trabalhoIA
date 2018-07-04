@@ -28,11 +28,14 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
     private static final int RANDOM_WALK_LENGTH = 50;
     private static final String SAY_COMMUNICATION_MODEL = StandardCommunicationModel.class.getName();
     private static final String SPEAK_COMMUNICATION_MODEL = ChannelCommunicationModel.class.getName();
-
+    
+    public static AmbulanceHelper listahospital;
     /**
        The search algorithm -> Bread first search(busca em largura)
     */
     protected SampleSearch search;
+    
+    protected List<EntityID> lastpath;
 
     /**
        Whether to use AKSpeak messages or not.
@@ -68,7 +71,10 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
         // Cria um array list para as prédios, ruas e refúgios
         buildingIDs = new ArrayList<EntityID>();
         roadIDs = new ArrayList<EntityID>();
-        refugeIDs = new ArrayList<EntityID>();
+        refugeIDs = new ArrayList<EntityID>();  
+        lastpath = new ArrayList<EntityID>();
+        
+        listahospital = new AmbulanceHelper();
         
         // Adiciona nos arraylist os respectivos ids do mapa
         for (StandardEntity next : model) {
