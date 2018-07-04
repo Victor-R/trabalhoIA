@@ -21,7 +21,7 @@ import rescuecore2.standard.kernel.comms.ChannelCommunicationModel;
 import rescuecore2.standard.kernel.comms.StandardCommunicationModel;
 
 /**
-   Abstract base class for sample agents.
+   Abstract base class for Agents.
    @param <E> The subclass of StandardEntity this agent wants to control.
  */
 public abstract class AbstractSampleAgent<E extends StandardEntity> extends StandardAgent<E> {
@@ -30,7 +30,7 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
     private static final String SPEAK_COMMUNICATION_MODEL = ChannelCommunicationModel.class.getName();
 
     /**
-       The search algorithm.
+       The search algorithm -> Bread first search(busca em largura)
     */
     protected SampleSearch search;
 
@@ -65,9 +65,12 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
     @Override
     protected void postConnect() {
         super.postConnect();
+        // Cria um array list para as prédios, ruas e refúgios
         buildingIDs = new ArrayList<EntityID>();
         roadIDs = new ArrayList<EntityID>();
         refugeIDs = new ArrayList<EntityID>();
+        
+        // Adiciona nos arraylist os respectivos ids do mapa
         for (StandardEntity next : model) {
             if (next instanceof Building) {
                 buildingIDs.add(next.getID());
@@ -79,7 +82,10 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
                 refugeIDs.add(next.getID());
             }
         }
+        
+        // Cria um grafo do mapa e implementa a busca em largura no mapa
         search = new SampleSearch(model);
+        // Pega todos os vizinhos do mapa
         neighbours = search.getGraph();
         useSpeak = config.getValue(Constants.COMMUNICATION_MODEL_KEY).equals(SPEAK_COMMUNICATION_MODEL);
         Logger.debug("Communcation model: " + config.getValue(Constants.COMMUNICATION_MODEL_KEY));
@@ -91,26 +97,34 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
        @return A random walk.
     */
     protected List<EntityID> randomWalk() {
-        List<EntityID> result = new ArrayList<EntityID>(RANDOM_WALK_LENGTH);        
+    	// Cria um ArrayList baseado no RANDOM_WALK_LENGTH	
+        List<EntityID> result = new ArrayList<EntityID>(RANDOM_WALK_LENGTH); 
+        // Cria um ArrayList das Entitys que já visitou
         Set<EntityID> seen = new HashSet<EntityID>();
+        // Posição atual do agente
         EntityID current = ((Human)me()).getPosition();
         
         for (int i = 0; i < RANDOM_WALK_LENGTH; ++i) {
+        	// Adiciona a posição atual no resultado e nos visitados
             result.add(current);
             seen.add(current);
+            // Cria um ArrayList dos vizinhos do lugar atual e os embaralha aleatoriamente
             List<EntityID> possible = new ArrayList<EntityID>(neighbours.get(current));
             Collections.shuffle(possible, random);
             boolean found = false;
+            // Percorre as possibilidades
             for (EntityID next : possible) {
+            	// Caso já tenha visitado, ignora
                 if (seen.contains(next)) {
                     continue;
                 }
+                // Caso contrário define essa possibilidade como o próximo movimento
                 current = next;
                 found = true;
                 break;
             }
+            // Caso nada tenha sido encontrado, está numa rua sem saida e não faz nada
             if (!found) {
-                // We reached a dead-end.
                 break;
             }
         }        

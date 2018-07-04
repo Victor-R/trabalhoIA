@@ -23,11 +23,21 @@ import rescuecore2.standard.entities.Refuge;
    A sample ambulance team agent.
  */
 public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
+	
+	private enum State{
+		AVAIABLE,
+		WALK,
+		RESCUE,
+		LOAD,
+	}
+	
     private Collection<EntityID> unexploredBuildings;
+    private State state = State.AVAIABLE;
+    private AmbulanceTeam me;
 
     @Override
     public String toString() {
-        return "Sample ambulance team";
+        return "Agente Médico";
     }
 
     @Override
@@ -36,6 +46,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
         System.out.println("Ambulance Team Conectado com sucesso");
         model.indexClass(StandardEntityURN.CIVILIAN, StandardEntityURN.FIRE_BRIGADE, StandardEntityURN.POLICE_FORCE, StandardEntityURN.AMBULANCE_TEAM, StandardEntityURN.REFUGE,StandardEntityURN.HYDRANT,StandardEntityURN.GAS_STATION, StandardEntityURN.BUILDING);
         unexploredBuildings = new HashSet<EntityID>(buildingIDs);
+        me = (AmbulanceTeam) me();
     }
 
     @Override
@@ -48,63 +59,77 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
             Logger.debug("Heard " + next);
         }
         updateUnexploredBuildings(changed);
-        // Am I transporting a civilian to a refuge?
+        // Verifica se está levando algum civil para o refúgio
         if (someoneOnBoard()) {
-            // Am I at a refuge?
+            // Verifica se está no refúgio
             if (location() instanceof Refuge) {
-                // Unload!
-                Logger.info("Unloading");
+                // Deixa o civil do refugio
+            	Logger.info("Deixando civil no refúgio");
                 sendUnload(time);
+                state = State.LOAD;
+                System.out.println("Estado atual do " + me.toString() + " " + state);
                 return;
             }
             else {
-                // Move to a refuge
+                // Move para o refúgio
                 List<EntityID> path = search.breadthFirstSearch(me().getPosition(), refugeIDs);
                 if (path != null) {
-                    Logger.info("Moving to refuge");
+                    Logger.info("Movendo para o refúgio");
                     sendMove(time, path);
+                    state = State.WALK;
+                    System.out.println("Estado atual do " + me.toString() + " " + state);
                     return;
                 }
-                // What do I do now? Might as well carry on and see if we can dig someone else out.
-                Logger.debug("Failed to plan path to refuge");
+                // O que fazer agora ?
+                Logger.debug("Não foi possível encontra um caminho até o refúgio");
             }
         }
-        // Go through targets (sorted by distance) and check for things we can do
+        // Procura entre os civis mais próximos para ver se consegue ajudar
         for (Human next : getTargets()) {
             if (next.getPosition().equals(location().getID())) {
-                // Targets in the same place might need rescueing or loading
+                // Verifica se o civil está no mesmo local e se precisa de ajuda
                 if ((next instanceof Civilian) && next.getBuriedness() == 0 && !(location() instanceof Refuge)) {
-                    // Load
-                    Logger.info("Loading " + next);
+                    // Carrega civil
+                    Logger.info("Carregando civil " + next);
                     sendLoad(time, next.getID());
+                    state = State.LOAD;
+                    System.out.println("Estado atual do " + me.toString() + " " + state);
                     return;
                 }
                 if (next.getBuriedness() > 0) {
-                    // Rescue
-                    Logger.info("Rescueing " + next);
+                    // Resgatando Civil
+                    Logger.info("Resgatando civil " + next);
                     sendRescue(time, next.getID());
+                    state = State.RESCUE;
+                    System.out.println("Estado atual do " + me.toString() + " " + state);
                     return;
                 }
             }
             else {
-                // Try to move to the target
+                // Tenta se mover até o civil
                 List<EntityID> path = search.breadthFirstSearch(me().getPosition(), next.getPosition());
                 if (path != null) {
-                    Logger.info("Moving to target");
+                    Logger.info("Movendo até o civil");
                     sendMove(time, path);
+                    state = State.WALK;
+                    System.out.println("Estado atual do " + me.toString() + " " + state);
                     return;
                 }
             }
         }
-        // Nothing to do
+        // Nenhum civil próximo
         List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings);
         if (path != null) {
-            Logger.info("Searching buildings");
+            Logger.info("Procurando prédios");
             sendMove(time, path);
+            state = State.WALK;
+            System.out.println("Estado atual do " + me.toString() + " " + state);
             return;
         }
-        Logger.info("Moving randomly");
+        Logger.info("Movendo aleatóriamente");
         sendMove(time, randomWalk());
+        state = State.AVAIABLE;
+        System.out.println("Estado atual do " + me.toString() + " " + state);
     }
 
     @Override
@@ -115,7 +140,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
     private boolean someoneOnBoard() {
         for (StandardEntity next : model.getEntitiesOfType(StandardEntityURN.CIVILIAN)) {
             if (((Human)next).getPosition().equals(getID())) {
-                Logger.debug(next + " is on board");
+                Logger.debug(next + " está sendo carregado");
                 return true;
             }
         }
