@@ -9,6 +9,14 @@ public class listaHospital {
 		this.ChildID = Child;
 	}
 	
+	public void setOwner(int newowner) {
+		OwnerID = newowner;
+	}
+	
+	public void setChild(int newchild) {
+		ChildID = newchild;
+	}
+	
 	public int getOwner() {
 		return this.OwnerID;
 	}

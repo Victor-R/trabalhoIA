@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.6.21)  5 JUL 2018 09:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.6.21)  5 JUL 2018 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -867,21 +867,21 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<fig1.png, id=1, 610.28pt x 341.275pt>
-File: fig1.png Graphic file (type png)
-<use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 49.
-(pdftex.def)             Requested size: 183.0854pt x 102.38329pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<fig1.png, id=1, 610.28pt x 341.275pt>
+File: fig1.png Graphic file (type png)
+<use fig1.png>
+Package pdftex.def Info: fig1.png  used on input line 59.
+(pdftex.def)             Requested size: 183.0854pt x 102.38329pt.
 <fig3.jpeg, id=3, 1284.8pt x 616.3025pt>
 File: fig3.jpeg Graphic file (type jpg)
 <use fig3.jpeg>
@@ -937,7 +937,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on trabalhoIA.pdf (3 pages, 393635 bytes).
+Output written on trabalhoIA.pdf (3 pages, 393637 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

@@ -62,6 +62,13 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
         updateUnexploredBuildings(changed); 
         System.out.println(me.getID()+" Moving to "+ me.getDirectionProperty().getValue());
         
+        // Se o agente morrer remova o seu id da lista do hospital
+        if(me.getHP() == 0) {
+        	listahospital.rmRescue(me.getID().getValue());
+        }
+        
+        listahospital.printHospital();
+        
         // Verifica se está levando algum civil para o refúgio
         if (someoneOnBoard()) {
             // Verifica se está no refúgio
@@ -115,7 +122,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                 
             }else {
             	
-            	if(listahospital.isOwner(me.getID().getValue(),next.getID().getValue())) {
+            	if(listahospital.isOwner(me.getID().getValue(),next.getID().getValue()) && next.getHP() > 0) {
             		// Tenta se mover até o civil
             		System.out.println("Ambulancia "+me.getID().getValue()+" indo para "+ next.getID().getValue());
                     List<EntityID> path = search.breadthFirstSearch(me().getPosition(), next.getPosition());
@@ -131,14 +138,18 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                     }
             	}else {
             		if(!listahospital.someoneHasCivilian(next.getID().getValue())) {
-            			listahospital.addRescue(me.getID().getValue(), next.getID().getValue());
-            			listahospital.cont++;            			            			            			
+            			if(next.getHP()>0) {
+            				listahospital.addRescue(me.getID().getValue(), next.getID().getValue());
+                			listahospital.cont++; 
+                			return;
+            			}            			           			            			            			
             		}
             	}                
             }
         }
         // Nenhum civil próximo        
-        List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings);        
+        List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings); 
+        updateUnexploredBuildings(changed);
         if (path != null && contador<4) {
             Logger.info("Procurando prédios");            
             sendMove(time, path);
@@ -156,6 +167,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
         
         Logger.info("Movendo aleatóriamente");
         sendMove(time, randomWalk());
+        
         state = State.AVAIABLE;        
         System.out.println("Estado atual do " + me.toString() + " " + state);
         

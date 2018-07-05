@@ -77,7 +77,7 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
         buildingIDs = new ArrayList<EntityID>();
         roadIDs = new ArrayList<EntityID>();
         refugeIDs = new ArrayList<EntityID>();  
-        lastpath = new ArrayList<EntityID>();
+        //lastpath = new ArrayList<EntityID>();
         contador = 0;
         listahospital = new AmbulanceHelper();
         

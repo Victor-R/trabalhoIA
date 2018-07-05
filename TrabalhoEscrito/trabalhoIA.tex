@@ -45,12 +45,6 @@ Essa ferramenta é utilizada na competição anual Robocup Rescue Simulation Lea
 
 Este software trata-se do centro do nosso estudo, onde os vários simuladores comunicam entre-si e fazem a comunicação entre agentes tudo através de um simulador de Kernel do próprio simulador que gerencia toda essa interação.
 
-\begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.3]{fig1.png}}
-\caption{RoboCup Rescue Agent Simulation platform architecture \cite{b1}}
-\label{fig}
-\end{figure}
-
 A composição do server é entre 6 simuladores:
 \begin{itemize}
 \item \textit {Clear Simulator} - Responsável pela remoção de bloqueios das estradas. 
@@ -60,6 +54,12 @@ A composição do server é entre 6 simuladores:
 \item \textit {Traffic Simulator} - Simulador responsável pelo movimento das entidades humanas.
 \item \textit {Misc Simulator} - Responsável pelo dano de humanos e estruturas.
 \end{itemize}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.3]{fig1.png}}
+\caption{RoboCup Rescue Agent Simulation platform architecture \cite{b1}}
+\label{fig}
+\end{figure}
 
 Na arquitetura do ambiente, como visto na Fig 1, ainda estão os objetos da cena, que estão dispostos em um arquivo ponto .gml, onde estão todas as estruturas e vias do mapa. O "Viewer" seria uma visualização gráfica do sistema, onde estão sendo atualizados os agentes e estruturas no ambiente. 
 
