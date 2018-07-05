@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-import com.sun.xml.internal.stream.Entity;
+//import com.sun.xml.internal.stream.Entity;
 
 import rescuecore2.log.Logger;
 import rescuecore2.messages.Command;
