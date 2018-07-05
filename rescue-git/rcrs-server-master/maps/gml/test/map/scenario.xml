@@ -49,12 +49,15 @@
   <rcr:policeforce rcr:location="971"/>
   <rcr:policeforce rcr:location="971"/>
   <rcr:policeforce rcr:location="971"/>
+  <rcr:policeforce rcr:location="971"/>
 
   <rcr:firestation rcr:location="960"/>
-  <rcr:firebrigade rcr:location="896"/>
-  <rcr:firebrigade rcr:location="896"/>
-  <rcr:firebrigade rcr:location="896"/>
-  <rcr:policeforce rcr:location="896"/>
+  <rcr:firebrigade rcr:location="970"/>
+  <rcr:firebrigade rcr:location="970"/>
+  <rcr:firebrigade rcr:location="970"/>
+  <rcr:firebrigade rcr:location="970"/>
+  <rcr:firebrigade rcr:location="970"/>
+  <rcr:policeforce rcr:location="970"/>
 
   <rcr:ambulancecentre rcr:location="249"/>
   <rcr:ambulanceteam rcr:location="273"/>

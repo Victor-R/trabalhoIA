@@ -130,22 +130,15 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                     }
             	}else {
             		if(!listahospital.someoneHasCivilian(next.getID().getValue())) {
-            			// o civil tem ambulancia já
             			listahospital.addRescue(me.getID().getValue(), next.getID().getValue());
             			listahospital.cont++;            			            			            			
-            		}else {            			
-            			// civil com dono portanto, continuar andando
-            			//System.out.println("AMBULANCIA RANDOM");
-            			//sendMove(time,randomWalk());
             		}
-            	}
-                
+            	}                
             }
         }
         // Nenhum civil próximo
-        List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings);
-        
-        if (path != null && (path != lastpath || lastpath.isEmpty() == true)) {
+        List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings);        
+        if (path != null) {
             Logger.info("Procurando prédios");            
             sendMove(time, path);
             state = State.WALK;

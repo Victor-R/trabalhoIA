@@ -8,14 +8,24 @@ public class AmbulanceHelper {
 	public List<listaHospital> hospital = new ArrayList<listaHospital>();
 	public int cont = 0;
 	
-	protected boolean addRescue(int ownerID,int childID) {
-		System.out.println(ownerID+": Alguém tem o civil?:"+someoneHasCivilian(childID));
-		if(!someoneHasCivilian(childID)){			
+	// função para adicionar registro a lista quando não há o id do civil na lista
+	protected boolean addRescue(int ownerID,int childID) {	 
+		if(!someoneHasCivilian(childID)){
 			hospital.add(cont,new listaHospital(ownerID,childID));	
 			return true;
 		}else {
 			return false;
 		}
+	}
+	
+	// função para saber se o owner já está na lista
+	protected int hadChild(int ownerID) { 
+		for(int i=0; i < hospital.size(); i++) {
+			if(hospital.get(i).getOwner() == ownerID) {				
+				return i;
+			}
+		}
+		return 0;		
 	}
 	
 	protected void finishRescue(int ownerID,int childID) {
@@ -42,7 +52,7 @@ public class AmbulanceHelper {
 	protected boolean someoneHasCivilian(int childID) {		
 		for(int i=0; i < hospital.size(); i++) {
 			if(hospital.get(i).getChild() == childID) {
-				System.out.println(hospital.get(i).toString());
+				//System.out.println(hospital.get(i).toString());
 				return true;
 			}
 		}
