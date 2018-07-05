@@ -104,7 +104,7 @@ public class FireBrigadeForce extends AbstractSampleAgent<FireBrigade> {
         Collection<EntityID> all = getBurningBuildings();
         // É possível apagar esse fogo?
         for (EntityID next : all) {
-            if (model.getDistance(getID(), next) <= maxDistance || me().getPosition() != next) {
+            if (model.getDistance(getID(), next) <= maxDistance) {
                 Logger.info("Apagando " + next);
                 sendExtinguish(time, next, maxPower);
                 try {

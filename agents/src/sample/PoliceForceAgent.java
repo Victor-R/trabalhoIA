@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+import com.sun.xml.internal.stream.Entity;
+
 import rescuecore2.log.Logger;
 import rescuecore2.messages.Command;
 import rescuecore2.misc.geometry.GeometryTools2D;
@@ -87,40 +89,52 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 		if(repeatBlock == 4) {
 			Blockade ignore = (Blockade)model.getEntity(lastBlockId);
 			blocks.add(ignore);
+			System.out.println("Ignorando o bloco: " + lastBlockId.getValue());
+			listaBlocos.rmResponsability(me.getID().getValue(), lastBlockId.getValue());
 			repeatBlock = 0;
 		}
-		if(repeatState == 4 && state == State.WALK) {
+		if(repeatState == 6 && (state == State.WALK || state == State.AVAIABLE)) {
 			state = State.AVAIABLE;
 			repeatState = 0;
 			lastState = state;
 			sendMove(time, randomWalk());
+			return;
 		}
 			
 		// Verifica se está próximo de um bloqueio
         Blockade target = getTargetBlockade();
         if (target != null) {
-            Logger.info("Limpando o bloqueio " + target);
-            System.out.println("Target id: " + target.getID().getValue() 
-    		+ " RepairCost: " + target.getRepairCost()
-    		+ " FullDescription: " + target.getFullDescription()
-    		+ " Apexes: " + target.getApexes()
-    		+ " ApexesProperty: " + target.getApexesProperty());
-            
-            if(lastBlockId != null && target.getID().getValue() == lastBlockId.getValue())
-            	repeatBlock++;
-            else
-            {
-            	lastBlockId = target.getID();
-            	repeatBlock = 0;
-            }
-            sendClear(time, target.getID());
-            state = state.CLEAR;
-            if(lastState == state)
-            	repeatState++;
-            else
-            	repeatState = 0;
-            lastState = state;
-            return;
+        	if(!listaBlocos.someoneHasThisResponsability(target.getID().getValue())) {
+        		System.out.println("Assumindo o bloco: " + target.getID().getValue());
+        		listaBlocos.addResponsability(me.getID().getValue(), target.getID().getValue());
+        	}
+        	
+        	if(listaBlocos.isOwner(me.getID().getValue(), target.getID().getValue())) {
+	            Logger.info("Limpando o bloqueio " + target);
+	            System.out.println("Target id: " + target.getID().getValue() 
+	    		+ " RepairCost: " + target.getRepairCost()
+	    		+ " Apexes: " + target.getApexes()
+	    		+ " ApexesProperty: " + target.getApexesProperty());
+	            
+	            if(lastBlockId != null && target.getID().getValue() == lastBlockId.getValue())
+	            	repeatBlock++;
+	            else
+	            {
+	            	lastBlockId = target.getID();
+	            	repeatBlock = 0;
+	            }
+	            sendClear(time, target.getID());
+	            state = state.CLEAR;
+	            if(lastState == state)
+	            	repeatState++;
+	            else
+	            	repeatState = 0;
+	            lastState = state;
+	            return;
+        	}
+        	else {
+        		System.out.println("Alguém já tem esse bloco");
+        	}
         }
         if(limpouRefugio == false) {
         	System.out.println("Precisa limpar refugio");
@@ -160,6 +174,7 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
         List<EntityID> path = search.breadthFirstSearch(me().getPosition(), getBlockedRoads());
         if (path != null) {
             Logger.info("Movendo para o bloqueio");
+            System.out.println("Movendo para o bloqueio");
             Road r = (Road)model.getEntity(path.get(path.size() - 1));
             Blockade b = getTargetBlockade(r, -1);
             if(b != null)
@@ -175,6 +190,53 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
                 lastState = state;
                 return;
             }
+        }
+        
+        // Tenta fazer um caminho até o bloqueio mais próximo que ele é dono
+        path = search.breadthFirstSearch(me().getPosition(), listaBlocos.getAllChilds(me.getID().getValue()));
+        /*
+        if (path != null) {
+            Logger.info("Movendo para o bloqueio que sou dono");
+            System.out.println("Movendo para o bloqueio que sou dono");
+            Road r = (Road)model.getEntity(path.get(path.size() - 1));
+            Blockade b = getTargetBlockade(r, -1);
+            if(b != null)
+            {
+            	sendMove(time, path, b.getX(), b.getY());
+            	Logger.debug("caminho: " + path);
+                Logger.debug("coordenadas do objetivo: " + b.getX() + ", " + b.getY());
+                state = State.WALK;
+                if(lastState == state)
+                	repeatState++;
+                else
+                	repeatState = 0;
+                lastState = state;
+                return;
+            }
+        }
+        */
+        for(EntityID id : listaBlocos.getAllChilds(me.getID().getValue())) {
+        	System.out.println("Procurando nos bloqueios que sou dono");
+        	Blockade b = (Blockade) model.getEntity(id);
+        	if(b != null) {
+        		System.out.println("Tentando encontra um caminho");
+        		path = search.breadthFirstSearch(me.getPosition(), id);
+        		if(path != null) {
+        			System.out.println("Encontrei um caminho");
+        			sendMove(time, path, b.getX(), b.getY());
+                	Logger.debug("caminho: " + path);
+                    Logger.debug("coordenadas do objetivo: " + b.getX() + ", " + b.getY());
+                    state = State.WALK;
+                    if(lastState == state)
+                    	repeatState++;
+                    else
+                    	repeatState = 0;
+                    lastState = state;
+                    return;
+        		}
+        		else 
+        			listaBlocos.rmResponsability(me.getID().getValue(), id.getValue());
+        	}
         }
         
         Logger.debug("Não foi possivel encontrar um caminho até o bloqueio");
@@ -248,9 +310,15 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
         for (EntityID next : ids) {
             Blockade b = (Blockade)model.getEntity(next);
             if(blocks.contains(b)) {
-            	System.out.println("--------------CONTAINS----------------");
+            	System.out.println("Esse bloco já foi visitado mais de 4x");
             	continue;
             }
+            if(listaBlocos.someoneHasThisResponsability(b.getID().getValue()) && 
+            		!listaBlocos.isOwner(me.getID().getValue(), b.getID().getValue())) {
+            	System.out.println("Alguém já é dono desse bloco");
+            	continue;
+            }
+            	
             double d = findDistanceTo(b, x, y);
             if (maxDistance < 0 || d < maxDistance)
                 return b;

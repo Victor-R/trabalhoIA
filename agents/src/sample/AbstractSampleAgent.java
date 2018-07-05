@@ -31,9 +31,11 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
     
     
     /**
-     * Algoritimo de ajuda ao agente ambulance
+     * Objetos resposáveis por controlar quem vai assumir a responsabilidade de um
+     * civil ou de um bloco.
      * */
-    public static AmbulanceHelper listahospital;
+    public static ResponsabilityHelper listaHospital;
+    public static ResponsabilityHelper listaBlocos;
     protected int contador;
     /**
        The search algorithm -> Bread first search(busca em largura)
@@ -79,7 +81,8 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
         refugeIDs = new ArrayList<EntityID>();  
         //lastpath = new ArrayList<EntityID>();
         contador = 0;
-        listahospital = new AmbulanceHelper();
+        listaHospital = new ResponsabilityHelper();
+        listaBlocos = new ResponsabilityHelper();
         
         // Adiciona nos arraylist os respectivos ids do mapa
         for (StandardEntity next : model) {

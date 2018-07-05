@@ -1,14 +1,14 @@
 package sample;
 
-public class listaHospital {
+public class Responsability {
 	private int OwnerID;
 	private int ChildID;
 	
-	public listaHospital(int Owner,int Child){
+	public Responsability(int Owner,int Child){
 		this.OwnerID = Owner;
 		this.ChildID = Child;
+		
 	}
-	
 	public void setOwner(int newowner) {
 		OwnerID = newowner;
 	}

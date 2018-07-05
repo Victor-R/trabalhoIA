@@ -64,10 +64,10 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
         
         // Se o agente morrer remova o seu id da lista do hospital
         if(me.getHP() == 0) {
-        	listahospital.rmRescue(me.getID().getValue());
+        	listaHospital.rmResponsability(me.getID().getValue());
         }
         
-        listahospital.printHospital();
+        listaHospital.printResponsibilities();
         
         // Verifica se está levando algum civil para o refúgio
         if (someoneOnBoard()) {
@@ -100,7 +100,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                 // Verifica se o civil está no mesmo local e se precisa de ajuda
             	
             		// se alguém está cuidando siga em frente            		
-            	if(listahospital.isOwner(me.getID().getValue(),next.getID().getValue())) {
+            	if(listaHospital.isOwner(me.getID().getValue(),next.getID().getValue())) {
             		if ((next instanceof Civilian) && next.getBuriedness() == 0 && !(location() instanceof Refuge)) {
                         // Carrega civil
                         Logger.info("Carregando civil " + next);
@@ -122,7 +122,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                 
             }else {
             	
-            	if(listahospital.isOwner(me.getID().getValue(),next.getID().getValue()) && next.getHP() > 0) {
+            	if(listaHospital.isOwner(me.getID().getValue(),next.getID().getValue()) && next.getHP() > 0) {
             		// Tenta se mover até o civil
             		System.out.println("Ambulancia "+me.getID().getValue()+" indo para "+ next.getID().getValue());
                     List<EntityID> path = search.breadthFirstSearch(me().getPosition(), next.getPosition());
@@ -137,10 +137,9 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                         return;
                     }
             	}else {
-            		if(!listahospital.someoneHasCivilian(next.getID().getValue())) {
+            		if(!listaHospital.someoneHasThisResponsability(next.getID().getValue())) {
             			if(next.getHP()>0) {
-            				listahospital.addRescue(me.getID().getValue(), next.getID().getValue());
-                			listahospital.cont++; 
+            				listaHospital.addResponsability(me.getID().getValue(), next.getID().getValue());
                 			return;
             			}            			           			            			            			
             		}
