@@ -29,7 +29,12 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
     private static final String SAY_COMMUNICATION_MODEL = StandardCommunicationModel.class.getName();
     private static final String SPEAK_COMMUNICATION_MODEL = ChannelCommunicationModel.class.getName();
     
+    
+    /**
+     * Algoritimo de ajuda ao agente ambulance
+     * */
     public static AmbulanceHelper listahospital;
+    protected int contador;
     /**
        The search algorithm -> Bread first search(busca em largura)
     */
@@ -56,7 +61,7 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
        Cache of refuge IDs.
     */
     protected List<EntityID> refugeIDs;
-
+    
     private Map<EntityID, Set<EntityID>> neighbours;
 
     /**
@@ -73,7 +78,7 @@ public abstract class AbstractSampleAgent<E extends StandardEntity> extends Stan
         roadIDs = new ArrayList<EntityID>();
         refugeIDs = new ArrayList<EntityID>();  
         lastpath = new ArrayList<EntityID>();
-        
+        contador = 0;
         listahospital = new AmbulanceHelper();
         
         // Adiciona nos arraylist os respectivos ids do mapa

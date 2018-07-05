@@ -124,6 +124,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
                     if (path != null) {                
                         Logger.info("Movendo até o civil");                    
                         sendMove(time, path);
+                        contador=0;
                         state = State.WALK;
                         System.out.println("Estado atual do " + me.toString() + " " + state);
                         return;
@@ -136,19 +137,26 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
             	}                
             }
         }
-        // Nenhum civil próximo
+        // Nenhum civil próximo        
         List<EntityID> path = search.breadthFirstSearch(me().getPosition(), unexploredBuildings);        
-        if (path != null) {
+        if (path != null && contador<4) {
             Logger.info("Procurando prédios");            
             sendMove(time, path);
             state = State.WALK;
+            for(int i=0;i<path.size();i++) {
+            	if(me.getPosition().getValue() == path.get(i).getValue()) {
+            		contador=0;
+            	}
+            }
+            contador++;
             System.out.println("Estado atual do " + me.toString() + " " + state);
             lastpath = path;
             return;
         }
+        
         Logger.info("Movendo aleatóriamente");
         sendMove(time, randomWalk());
-        state = State.AVAIABLE;
+        state = State.AVAIABLE;        
         System.out.println("Estado atual do " + me.toString() + " " + state);
         
     }
