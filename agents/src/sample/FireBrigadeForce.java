@@ -3,6 +3,7 @@ package sample;
 import static rescuecore2.misc.Handy.objectsToIDs;
 
 import java.util.List;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -52,7 +53,9 @@ public class FireBrigadeForce extends AbstractSampleAgent<FireBrigade> {
         maxWater = config.getIntValue(MAX_WATER_KEY);
         maxDistance = config.getIntValue(MAX_DISTANCE_KEY);
         maxPower = config.getIntValue(MAX_POWER_KEY);
-        Logger.info("Bombeiro conectado com sucesso: distância máxima de extinção de fogo"
+        System.out.println("Bombeiro conectado com sucesso id: " + me().getID());
+        Logger.info("Bombeiro conectado com sucesso: id = " + me().getID() 
+        		+ " distância máxima de extinção de fogo"
         		+ " = " + maxDistance + ", potencia máxima = " + maxPower 
         		+ ", capacidade máxima do tanque = " + maxWater);
     }
@@ -88,6 +91,7 @@ public class FireBrigadeForce extends AbstractSampleAgent<FireBrigade> {
             }
             else {
                 Logger.debug("Não foi possíve encontra um caminho até o refúgio");
+                System.out.println("Não foi possivel encontrar um caminho até o refúgio");
                 path = randomWalk();
                 Logger.info("Movendo aleatóriamente");
                 sendMove(time, path);
@@ -100,11 +104,16 @@ public class FireBrigadeForce extends AbstractSampleAgent<FireBrigade> {
         Collection<EntityID> all = getBurningBuildings();
         // É possível apagar esse fogo?
         for (EntityID next : all) {
-            if (model.getDistance(getID(), next) <= maxDistance) {
+            if (model.getDistance(getID(), next) <= maxDistance || me().getPosition() != next) {
                 Logger.info("Apagando " + next);
                 sendExtinguish(time, next, maxPower);
-                sendSpeak(time, 1, ("Apagando " + next).getBytes());
-        		Building b = (Building)model.getEntity(next);
+                try {
+                	sendSpeak(time, 1, ("Apagando " + next).getBytes("UTF-8"));
+                }
+                catch (UnsupportedEncodingException e) {
+        			Logger.error("UnsupportedEnconding " + e.getMessage());
+                }
+                Building b = (Building)model.getEntity(next);
                 buildingDetected.remove(b);
                 state = state.EXTINGUISH;
                 System.out.println("Estado atual do " + me.toString() + " " + state);
@@ -124,6 +133,7 @@ public class FireBrigadeForce extends AbstractSampleAgent<FireBrigade> {
         }
         List<EntityID> path = null;
         Logger.debug("Não foi possível planejar um caminho até o incendio");
+        System.out.println("Não foi possível planejar um caminho até o incendio");
         path = randomWalk();
         Logger.info("Movendo aleatóriamente");
         sendMove(time, path);

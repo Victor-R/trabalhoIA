@@ -37,7 +37,12 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 	private PoliceForce me;
 	private State state = State.AVAIABLE;
 	private ArrayList<String> msgs = new ArrayList<String>();
+	private ArrayList<Blockade> blocks = new ArrayList<>();
 	private Boolean limpouRefugio = false;
+	private State lastState;
+	private int repeatState;
+	private int repeatBlock;
+	private EntityID lastBlockId;
 	
 	public PoliceForceAgent() {
 		//rnd = new Random(System.currentTimeMillis());
@@ -52,9 +57,9 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
     protected void postConnect() {
         super.postConnect();
         model.indexClass(StandardEntityURN.ROAD);
-        System.out.println("Policial Conectado com sucesso");
         distance = config.getIntValue(DISTANCE_KEY);
         me = (PoliceForce) me();
+        System.out.println("Policial Conectado com sucesso, id: " + me.getID());
         search = new SampleSearch(model);
     }
 	
@@ -78,15 +83,47 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 	}
 
 	protected void act(int time) {
+		System.out.println("repeat: " + repeatState + " " + me.getID());
+		if(repeatBlock == 4) {
+			Blockade ignore = (Blockade)model.getEntity(lastBlockId);
+			blocks.add(ignore);
+			repeatBlock = 0;
+		}
+		if(repeatState == 4 && state == State.WALK) {
+			state = State.AVAIABLE;
+			repeatState = 0;
+			lastState = state;
+			sendMove(time, randomWalk());
+		}
+			
 		// Verifica se está próximo de um bloqueio
         Blockade target = getTargetBlockade();
         if (target != null) {
             Logger.info("Limpando o bloqueio " + target);
+            System.out.println("Target id: " + target.getID().getValue() 
+    		+ " RepairCost: " + target.getRepairCost()
+    		+ " FullDescription: " + target.getFullDescription()
+    		+ " Apexes: " + target.getApexes()
+    		+ " ApexesProperty: " + target.getApexesProperty());
+            
+            if(lastBlockId != null && target.getID().getValue() == lastBlockId.getValue())
+            	repeatBlock++;
+            else
+            {
+            	lastBlockId = target.getID();
+            	repeatBlock = 0;
+            }
             sendClear(time, target.getID());
             state = state.CLEAR;
+            if(lastState == state)
+            	repeatState++;
+            else
+            	repeatState = 0;
+            lastState = state;
             return;
         }
         if(limpouRefugio == false) {
+        	System.out.println("Precisa limpar refugio");
         	// Verifica qual é o bloqueio mais próximo para limpar a area até p refúgio
         	if(refugeIDs.isEmpty() == false)
         	{
@@ -97,10 +134,24 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
         		Blockade target2 = getTargetBlockade();
         		if (target2 != null) {
             		Logger.info("Limpando bloqueio " + target2);
+            		System.out.println("Target id: " + target2.getID() 
+            		+ " Tamanho: " + target2.getRepairCost() 
+            		+ " Apexes: " + target2.getApexes()
+            		+ " ApexesProperty: " + target2.getApexesProperty());
             		sendClear(time, target2.getID());
             		state = state.CLEAR;
+            		if(lastState == state)
+                    	repeatState++;
+                    else
+                    	repeatState = 0;
+                    lastState = state;
             		return;
         		}
+        		if(lastState == state)
+                	repeatState++;
+                else
+                	repeatState = 0;
+                lastState = state;
         	}
         	limpouRefugio = true;
         }
@@ -111,16 +162,29 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
             Logger.info("Movendo para o bloqueio");
             Road r = (Road)model.getEntity(path.get(path.size() - 1));
             Blockade b = getTargetBlockade(r, -1);
-            sendMove(time, path, b.getX(), b.getY());
-            Logger.debug("Caminho: " + path);
-            Logger.debug("Coordenadas do Objetivo: " + b.getX() + ", " + b.getY());
-            state = state.WALK;
-            return;
+            if(b != null)
+            {
+            	sendMove(time, path, b.getX(), b.getY());
+            	Logger.debug("caminho: " + path);
+                Logger.debug("coordenadas do objetivo: " + b.getX() + ", " + b.getY());
+                state = State.WALK;
+                if(lastState == state)
+                	repeatState++;
+                else
+                	repeatState = 0;
+                lastState = state;
+                return;
+            }
         }
         
         Logger.debug("Não foi possivel encontrar um caminho até o bloqueio");
         Logger.info("Movendo aleatoriamente");
         state = state.AVAIABLE;
+        if(lastState == state)
+        	repeatState++;
+        else
+        	repeatState = 0;
+        lastState = state;
         sendMove(time, randomWalk());
 	}
 
@@ -183,6 +247,10 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
         int y = me().getY();
         for (EntityID next : ids) {
             Blockade b = (Blockade)model.getEntity(next);
+            if(blocks.contains(b)) {
+            	System.out.println("--------------CONTAINS----------------");
+            	continue;
+            }
             double d = findDistanceTo(b, x, y);
             if (maxDistance < 0 || d < maxDistance)
                 return b;
