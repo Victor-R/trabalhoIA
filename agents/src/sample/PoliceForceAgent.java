@@ -100,7 +100,7 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
 			sendMove(time, randomWalk());
 			return;
 		}
-			
+		
 		// Verifica se está próximo de um bloqueio
         Blockade target = getTargetBlockade();
         if (target != null) {

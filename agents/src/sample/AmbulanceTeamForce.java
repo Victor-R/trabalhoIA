@@ -67,7 +67,7 @@ public class AmbulanceTeamForce extends AbstractSampleAgent<AmbulanceTeam> {
         	listaHospital.rmResponsability(me.getID().getValue());
         }
         
-        listaHospital.printResponsibilities();
+        //listaHospital.printResponsibilities();
         
         // Verifica se está levando algum civil para o refúgio
         if (someoneOnBoard()) {

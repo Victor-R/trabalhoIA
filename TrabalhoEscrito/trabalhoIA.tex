@@ -101,13 +101,13 @@ Mais detalhes sobre comunicação serão descritos posteriormente neste document
 \section{Agentes}
 Os agentes são os atores do simulador, que interagem com o sistema e comunicam entre si. Nesta seção serão explicados as ações e funções de cada um.
 \subsection{Civillians}
-Os civis são os agentes que devem ter seu caminho facilitado por outros agentes até o refúgio.
+Os Civis são os agentes que devem ter seu caminho facilitado por outros agentes até o refuge.
 \subsection{Police Force}
-A polícia tem como objetivo limpar os blockades, ou seja, facilitar o caminho de todos os agentes no ambiente.
+A Polícia tem como objetivo limpar os blockades, ou seja, facilitar o caminho de todos os agentes no ambiente.
 \subsection{Fire Brigade}
-A fire Brigade tem como função apagar incêndios em prédios, eles carregam uma certa quantidade de 'água', que após ser usado deve ser reabastecido em um refuge.
+O Fire Brigade tem como função apagar incêndios em prédios, eles carregam uma certa quantidade de 'água', que após ser usado deve ser reabastecido em um refuge.
 \subsection{Ambulance Team}
-Ambulance Teams são os agentes que resgatam outros agentes e levam ao refuge, eles também salvam agentes enterrados e carregam no máximo um agente.
+Ambulance Teams são os agentes que resgatam outros agentes e levam ao refuge, eles também salvam agentes enterrados e carregam no máximo um civil.
 \subsection{Central Agents}
 Representados como localizações chave, Ambulance Centers, Fire Stations e Police Offices. Tem como única função realizar a comunicação via rádio com os agentes.
 
@@ -148,7 +148,7 @@ A ação \textit{CLEAR}, que é a principal função do policial, consiste em no
 As ambulâncias tem a programação para sempre andar de prédio em prédio em busca de sobreviventes, a função deste agente é o resgate de civis e outros agentes soterrados. 
 Após achar um civil, o agente deve levar até o refuge, o carregamento de um outro agente leva um tempo grande onde o agente permanece tratando do outro agente, que é um tempo calculado pela função \textit{sendRescue} que é de bibliotecas do simulador.
 
-Como não podemos melhorar o tempo de tratamento, o foco é a melhor distribuição das ambulâncias em busca de vítimas, como por exemplo o caso de quando 2 ou mais ambulâncias tratando da mesma vítima, são dois agentes alocados a uma tarefa, e não torna mais rápida, e sim inútil a presença de mais que um agente. Portanto o que fizemos foi um cadastro de vítimas, com a classe \textit{AmbulanceHelper}. É montado uma lista com os agentes alocados a determinadas vítimas e somente o responsável pela vítima vai conseguir realizar o tratamento, enquanto outros agentes que passarem por ali irão, reconhecer que a vítima já tem um agente alocado a ela e irão seguir em frente em busca de mais vítimas.
+Como não podemos melhorar o tempo de tratamento, o foco é a melhor distribuição das ambulâncias em busca de vítimas, como por exemplo o caso de quando 2 ou mais ambulâncias tratando da mesma vítima, são dois agentes alocados a uma tarefa, e não torna mais rápida, e sim inútil a presença de mais que um agente. Portanto o que fizemos foi um cadastro de vítimas, com a classe \textit{ResponsabiliyHelper}. É montado uma lista com os agentes alocados a determinadas vítimas e somente o responsável pela vítima vai conseguir realizar o tratamento, enquanto outros agentes que passarem por ali irão, reconhecer que a vítima já tem um agente alocado a ela e irão seguir em frente em busca de mais vítimas.
 
 Como os agentes são executados em \textit{threads}, ou seja, em paralelo, ocorre uma concorrência pela vítima e portanto o agente que conseguir manter-se com aquela vítima é o único que irá tratá-la.
 
