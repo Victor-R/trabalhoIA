@@ -5,15 +5,20 @@ public class listaHospital {
 	private int ChildID;
 	
 	public listaHospital(int Owner,int Child){
-		OwnerID = Owner;
-		ChildID = Child;
+		this.OwnerID = Owner;
+		this.ChildID = Child;
 	}
 	
 	public int getOwner() {
-		return OwnerID;
+		return this.OwnerID;
 	}
 	
 	public int getChild() {
-		return ChildID;
+		return this.ChildID;
+	}
+	
+	@Override
+	public String toString() {
+		return "OwnerId = " + this.OwnerID + " ChildId = " + this.ChildID;
 	}
 }

@@ -112,7 +112,6 @@ public class PoliceForceAgent extends AbstractSampleAgent<PoliceForce>{
             Road r = (Road)model.getEntity(path.get(path.size() - 1));
             Blockade b = getTargetBlockade(r, -1);
             sendMove(time, path, b.getX(), b.getY());
-            System.out.println("Blockade="+b.getID().getValue()+" coordenadas="+b.getX()+" | "+b.getY());
             Logger.debug("Caminho: " + path);
             Logger.debug("Coordenadas do Objetivo: " + b.getX() + ", " + b.getY());
             state = state.WALK;
